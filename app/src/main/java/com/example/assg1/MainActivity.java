@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Declaring variables
     EditText usd;
     EditText lbp;
 
@@ -17,15 +18,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //initializing the declared variables
         usd = (EditText) findViewById(R.id.USD);
         lbp = (EditText) findViewById(R.id.LBP);
     }
 
     public void converter(View view){
 
+        //Declaring and initializing variables that takes input from user
         String input_inDollars = usd.getText().toString();
         String input_inLBP = lbp.getText().toString();
 
+
+        //Conditions for converting from LBP to $ and vise versa and error message prompt if user didn't enter either
         if (!input_inLBP.equalsIgnoreCase("Enter in LBP to convert to $")){
             double output_inDollars = Double.parseDouble(input_inLBP)/22000;
             Toast.makeText(getApplicationContext(),output_inDollars + " $",Toast.LENGTH_LONG).show();
